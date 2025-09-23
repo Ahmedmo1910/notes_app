@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:notes/utils/app_colors.dart';
+import 'package:notes/utils/app_text_styles.dart';
 
 class TimeAndDateWidget extends StatelessWidget {
   final String text;
@@ -22,7 +22,12 @@ class TimeAndDateWidget extends StatelessWidget {
         color: AppColors.lightSecondaryColor,
         borderRadius: BorderRadius.circular(6),
       ),
-      child: Center(child: Text(text, style:TextStyle(color: AppColors.timeColor,fontSize: 12))),
+      child: Center(
+        child: Text(
+          text,
+          style: AppTextStyles.regular12.copyWith(color: AppColors.timeColor),
+        ),
+      ),
     );
   }
 }
