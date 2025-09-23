@@ -13,7 +13,7 @@ class CreateSomethingNewWidget extends StatelessWidget {
     required this.text,
     required this.animationPath,
     required this.width,
-    required this.height
+    required this.height,
   });
 
   @override
@@ -24,21 +24,22 @@ class CreateSomethingNewWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(
-          color: AppColors.secondaryColor,
-          width: 2.0,
-        ),
+        border: Border.all(color: AppColors.secondaryColor, width: 2.0),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.25),
+            offset: Offset(0, 4),
+            blurRadius: 4,
+            spreadRadius: 0,
+          ),
+        ],
       ),
       child: Stack(
         children: [
           Positioned(
             right: 10,
             top: 10,
-            child: Lottie.asset(
-              width: width,
-              height: height,
-              animationPath,
-            ),
+            child: Lottie.asset(width: width, height: height, animationPath),
           ),
           Positioned(
             top: 15,
