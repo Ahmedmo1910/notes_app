@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:notes/helper_functions/build_app_bar.dart';
+import 'package:notes/screens/tasks_screen.dart';
 import 'package:notes/widgets/custom_bottom_nav_bar.dart';
-import 'package:notes/widgets/home_screen_body.dart';
+import 'package:notes/screens/home_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -13,9 +15,9 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = const [
-    HomeScreenBody(),
+    HomeScreen(),
     Center(child: Text("Notes Page", style: TextStyle(fontSize: 22))),
-    Center(child: Text("Tasks Page", style: TextStyle(fontSize: 22))),
+    TasksScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -27,6 +29,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: buildAppBar(),
       body: _pages[_selectedIndex],
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: CustomBottomNavBar(
