@@ -7,4 +7,6 @@ abstract class AppColors {
   static const Color bottomAppBarColor = Color(0xFFFEFADD);
   static const Color bottomAppBarSecondaryColor = Color(0xFFC4C962);
   static const Color timeColor = Color(0xFF3395FF);
+  static const Color containerColor = Color(0xFFF4F4F4);
+  static const Color greyColor = Color(0xFF616161);
 }

@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Inter'),
       debugShowCheckedModeBanner: false,
       title: 'Notes',
-      home: AuthScreen(),
+      home: MainScreen(),
     );
   }
 }
