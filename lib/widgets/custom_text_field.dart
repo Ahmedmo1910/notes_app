@@ -12,7 +12,9 @@ class CustomTextFormField extends StatelessWidget {
   final Widget? suffixIcon;
   final Widget? prefixIcon;
   final double borderRadius;
-
+  final int? maxLines;
+  final String initialText;
+  final bool isExpand;
 
   const CustomTextFormField({
     super.key,
@@ -25,7 +27,9 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.prefixIcon,
     this.borderRadius = 10,
-  
+    this.maxLines,
+    this.initialText = '',
+    this.isExpand = false,
   });
 
   @override
@@ -50,7 +54,7 @@ class CustomTextFormField extends StatelessWidget {
         AutofillHints.name,
         AutofillHints.telephoneNumber,
       ],
-      
+
       cursorColor: AppColors.primaryColor,
       obscureText: obscureText,
       decoration: InputDecoration(
@@ -72,6 +76,9 @@ class CustomTextFormField extends StatelessWidget {
       ),
       keyboardType: keyboardType,
       onSaved: onSaved,
+      maxLines: maxLines,
+      initialValue: initialText,
+      expands: isExpand,
     );
   }
 
